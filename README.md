@@ -13,7 +13,7 @@ This project is built using pure HTML, CSS, and JavaScript and is deployed using
 
 👉 Live Application:
 
-https://<your-github-username>.github.io/kodukal-vaangal/
+https://sutharsanam07.github.io/Kodukal-Vaangal/
 
 ✨ Key Features
 🔹 Ledger Management
