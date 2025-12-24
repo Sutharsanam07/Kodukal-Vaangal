@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kodukal–Vaangal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="start-page">
+
+<div class="start-container">
+  <h1>💰 Kodukal–Vaangal</h1>
+  <p>Simple Borrow & Return Ledger</p>
+  <button onclick="start()">Get Started</button>
+</div>
+
+<script>
+  function start() {
+    localStorage.setItem("kv_started", "yes");
+    location.href = "app.html";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kodukal–Vaangal | Monthly Summary</title>
+
+  <!-- Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>📊 Monthly Summary</h2>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<!-- FILTERS -->
+<section class="entry-box">
+  <input type="month" id="monthPicker">
+  <input type="date" id="fromDate">
+  <input type="date" id="toDate">
+  <button onclick="loadMonthlySummary()">View Summary</button>
+</section>
+
+<!-- ACTIONS -->
+<section class="actions">
+  <button onclick="exportSummaryExcel()">Export Excel</button>
+  <button onclick="exportSummaryPDF()">Export PDF</button>
+  <a href="app.html" class="summary-btn">⬅ Back to Ledger</a>
+</section>
+
+<!-- SUMMARY TABLE -->
+<section class="ledger">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Total Borrowed</th>
+          <th>Total Returned</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody id="summaryBody">
+        <tr>
+          <td colspan="4" style="text-align:center;color:gray;">
+            Select filters and click View Summary
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CHART -->
+<section class="chart-box">
+  <h3>Monthly Balance Chart</h3>
+  <canvas id="summaryChart"></canvas>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

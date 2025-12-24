@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kodukal–Vaangal</title>
+  <a href="summary.html" class="summary-btn">📊 Monthly Summary</a>
+
+
+
+  <!-- Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <!-- Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>💰 Kodukal–Vaangal</h2>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<!-- ENTRY SECTION -->
+<section class="entry-box">
+  <input id="nameInput" placeholder="Name">
+  <input id="amountInput" type="number" placeholder="Amount (₹)">
+  <select id="processInput">
+    <option value="Borrowed">Borrow (+)</option>
+    <option value="Returned">Return (-)</option>
+  </select>
+  <button onclick="addEntry()">Add</button>
+</section>
+
+<!-- ACTIONS -->
+<section class="actions">
+  <button onclick="exportExcel()">Export Excel</button>
+  <input type="file" accept=".xlsx,.xls" onchange="importExcel(event)">
+</section>
+
+<!-- LEDGER TABLE -->
+<section class="ledger">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date & Time</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Balance</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CHART -->
+<section class="chart-box">
+  <h3>Balance Overview</h3>
+  <canvas id="balanceChart"></canvas>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
